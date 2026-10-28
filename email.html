@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Validation</title>
+<style>
+body {
+    
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding-top: 100px;
+} 
+        .container {
+    width: 450px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+h2 {
+    color: #333;
+}
+label {
+    font-size: 18px;
+}
+input[type="text"] {
+width: 280px;
+padding: 10px;
+margin: 15px 0;
+border: 1px solid #999;
+border-radius: 5px;
+font-size: 16px; 
+        }
+input[type="submit"] {
+padding: 10px 25px;
+background-color: #007acc;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px; 
+        }
+input[type="submit"]:hover {
+    background-color: #005f99;
+} 
+        #result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+} 
+
+    </style>
+<script>
+function validateEmail() {
+    var email = document.getElementById("email").value;
+    var result = document.getElementById("result");
+    // Check if email field is empty 
+    if (email == "") {
+        result.innerHTML = "Please enter an email address.";
+        return false;
+    }
+    // Check for @ and . characters 
+    if (email.includes("@") && email.includes(".")) {
+        result.innerHTML = "Valid Email Address.";
+    } else {
+        result.innerHTML = "Invalid Email Address.";
+    }
+    return false;
+} 
+    </script> 
+ 
+</head> 
+<body> 
+    <div class="container">
+<h2>Email Address Validation</h2> 
+        <form onsubmit="return validateEmail()"> 
+            <label for="email">Enter Email:</label> 
+            <br> 
+            <input
+type="text"
+id="email"
+placeholder="Enter your email"
+        > 
+ 
+            <br> 
+            <input
+type="submit"
+value="Submit"
+        > 
+ 
+        </form> 
+        <p id="result"></p> 
+    </div> 
+</body> 
+</html 
